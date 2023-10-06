@@ -1,8 +1,7 @@
 var $ = jQuery;
 
 const nextFormFn = () => {
-  $(".navWrap .boarding-next").click(function () {
-    // alert("hi");
+  $(document).on("click", ".navWrap .boarding-next", function () {
     var data_id = $(this).attr("data-id");
     $(".reeled-board").removeClass("active");
     $("#" + data_id).addClass("active");
@@ -84,6 +83,10 @@ const ajaxFormFn = () => {
     }
   }
 
+  function remove_locaStorage(key) {
+    localStorage.removeItem(key);
+  }
+
   //getting ID from localStorage
   function get_id_from_localStorage(key) {
     const value = localStorage.getItem(key);
@@ -101,7 +104,12 @@ const ajaxFormFn = () => {
       contentType: "application/x-www-form-urlencoded", // or 'multipart/form-data' if needed
       dataType: "json", // Specify the expected data type (JSON in this case)
       success: function (response) {
+        const buttonLoadAfterData = $("#boarding-form-1 .reeledForm");
+        const nextButtonWrapper = `<div class="navWrap">
+                        <button type="submit" class="boarding-next" data-id="boarding-form-2">js next</button>
+                    </div>`;
         if (response.data !== null && response.data !== undefined) {
+          buttonLoadAfterData.append(nextButtonWrapper);
           response.data.buckets.forEach(function (bucket, index) {
             const bucketItemHtml = `
           <div class="bucketList">
@@ -125,7 +133,10 @@ const ajaxFormFn = () => {
 
             $("#bucket_list_wrapper").append(bucketItemHtml);
           });
+
+          $("#form1 .navWrap").remove();
         } else {
+          remove_locaStorage(storageKey);
           const _jsBucketList = `<div class="bucketList">
                                     <h2>Bucket 1</h2>
                                     <div class="formField">
@@ -142,6 +153,7 @@ const ajaxFormFn = () => {
                                     </div>
                                 </div>`;
           $("#bucket_list_wrapper").append(_jsBucketList);
+          buttonLoadAfterData.nextButtonWrapper.remove();
         }
         $('input[name="uni_name"]').val(response.data.uni_name);
         $('input[name="contact_name"]').val(response.data.contact_name);
