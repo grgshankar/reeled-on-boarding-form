@@ -1,3 +1,4 @@
+const { v4: uuidv4 } = require("uuid");
 const { Schema, model } = require("mongoose");
 const commonSchema = require("../../utils/commonSchema");
 const validateEmail = (email) => {
@@ -8,9 +9,25 @@ const bucketSchema = new Schema({
   bucket_areas: { type: String },
   bucket_brief: { type: String },
 });
+// const userSchema = new Schema({
+//   fullName: { type: String },
+//   jobRole: { type: String },
+//   email: {
+//     type: String,
+//     trim: true,
+//     lowercase: true,
+//     unique: true,
+//     required: "Email address is required",
+//     validate: [
+//       /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/,
+//       "Please fill a valid email address",
+//     ],
+//   },
+//   userLevel: { type: String },
+// });
 const universitySchema = new Schema({
+  // _id: { type: String, default: uuidv4() },
   uni_name: { type: String, required: true },
-  // logo: { type: String },
   contact_name: { type: String, required: true },
   website_url: { type: String, required: true },
   staging_url: { type: String, required: true },
@@ -40,6 +57,16 @@ const universitySchema = new Schema({
     ],
   },
   buckets: [bucketSchema],
+  // server: { type: String },
+  // install: { type: String },
+  // server_access: { type: String },
+  // server_address: { type: String },
+  // server_username: { type: String },
+  // server_password: { type: String },
+  // cms_web_url: { type: String },
+  // cms_username: { type: String },
+  // cms_password: { type: String },
+  // additionalUsers: [userSchema],
   ...commonSchema,
 });
 

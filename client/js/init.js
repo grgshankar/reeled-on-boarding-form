@@ -17,39 +17,6 @@ const nextFormFn = () => {
 };
 // just for the localStorage
 let bucketCounter = 1;
-const bucketAutoFormLoad = () => {
-  $(window).on("load", function () {
-    const _firstLoadhtml = `
-    <div class="bucketList">
-      <h2>Bucket ${bucketCounter}</h2>
-        <div class="formField">
-          <input
-            type="text"
-            name="bucket_name[]"
-            placeholder="Bucket Name"
-            autocomplete="off"
-          />
-        </div>
-        <div class="formField">
-          <input
-            type="text"
-            name="bucket_areas[]"
-            placeholder="Bucket Page or Website Areas"
-            autocomplete="off"
-          />
-        </div>
-        <div class="formField fullwidth">
-          <textarea
-            name="bucket_brief[]"
-            placeholder="Additional Buckets Brief:"
-            autocomplete="off"
-          ></textarea>
-        </div>
-      </div>`;
-    $("#bucket_list_wrapper").append(_firstLoadhtml);
-    updateBucketNumbers();
-  });
-};
 const updateBucketNumbers = () => {
   $("#bucket_list_wrapper .bucketList h2 ").each(function (index) {
     $(this).text(`Bucket ${index + 1}`);
@@ -102,7 +69,9 @@ const removeBucket = () => {
     updateBucketNumbers();
   });
 };
+
 const ajaxFormFn = () => {
+  // console.log("ajaxformfn loaded");
   //decalring key name in the localStorage
   const storageKey = "user_id";
 
@@ -116,16 +85,14 @@ const ajaxFormFn = () => {
   }
 
   //getting ID from localStorage
-  function get_id_from_localStorage(hey) {
-    const value = localStorage.getItem(hey);
+  function get_id_from_localStorage(key) {
+    const value = localStorage.getItem(key);
     if (value !== null && value !== undefined) {
       return JSON.parse(value);
     }
-    return false;
+    return true;
   }
-
   current_user_session();
-
   // getting data from api by the help of ID
   function get_data_from_api(_id) {
     $.ajax({
@@ -134,21 +101,9 @@ const ajaxFormFn = () => {
       contentType: "application/x-www-form-urlencoded", // or 'multipart/form-data' if needed
       dataType: "json", // Specify the expected data type (JSON in this case)
       success: function (response) {
-        $('input[name="uni_name"]').val(response.data.uni_name);
-        $('input[name="contact_name"]').val(response.data.contact_name);
-        $('input[name="website_url"]').val(response.data.website_url);
-        $('input[name="email"]').val(response.data.email);
-        $('input[name="staging_url"]').val(response.data.staging_url);
-        $('input[name="technical_contact_name"]').val(
-          response.data.technical_contact_name
-        );
-        $('input[name="technical_contact_email"]').val(
-          response.data.technical_contact_email
-        );
-        // Display bucket list data
-        const buckets = response.data.buckets;
-        buckets.forEach(function (bucket, index) {
-          const bucketItemHtml = `
+        if (response.data !== null && response.data !== undefined) {
+          response.data.buckets.forEach(function (bucket, index) {
+            const bucketItemHtml = `
           <div class="bucketList">
             <h2>Bucket ${index + 1}</h2>
             <div class="formField">
@@ -168,8 +123,37 @@ const ajaxFormFn = () => {
             </div>
           </div>`;
 
-          $("#bucket_list_wrapper").append(bucketItemHtml);
-        });
+            $("#bucket_list_wrapper").append(bucketItemHtml);
+          });
+        } else {
+          const _jsBucketList = `<div class="bucketList">
+                                    <h2>Bucket 1</h2>
+                                    <div class="formField">
+                                        <input type="text" name="bucket_name[]" placeholder="Bucket Name"
+                                            autocomplete="off" />
+                                    </div>
+                                    <div class="formField">
+                                        <input type="text" name="bucket_areas[]"
+                                            placeholder="Bucket Page or Website Areas" autocomplete="off" />
+                                    </div>
+                                    <div class="formField fullwidth">
+                                        <textarea name="bucket_brief[]" placeholder="Additional Buckets Brief:"
+                                            autocomplete="off"></textarea>
+                                    </div>
+                                </div>`;
+          $("#bucket_list_wrapper").append(_jsBucketList);
+        }
+        $('input[name="uni_name"]').val(response.data.uni_name);
+        $('input[name="contact_name"]').val(response.data.contact_name);
+        $('input[name="website_url"]').val(response.data.website_url);
+        $('input[name="email"]').val(response.data.email);
+        $('input[name="staging_url"]').val(response.data.staging_url);
+        $('input[name="technical_contact_name"]').val(
+          response.data.technical_contact_name
+        );
+        $('input[name="technical_contact_email"]').val(
+          response.data.technical_contact_email
+        );
       },
       error: function (xhr, textStatus, errorThrown) {
         console.error("Request failed with status:", textStatus);
@@ -185,42 +169,80 @@ const ajaxFormFn = () => {
     }
   }
   // new account ajax
-  $("#myForm").submit(function (e) {
+  $("#form1").submit(function (e) {
     e.preventDefault();
     // Get the form data
-    const formData = new FormData(this);
-    console.log("formData", formData);
-    var formDataObject = {};
+    // console.log("this is form 1=", $("#form1")[0]);
+    const formData1 = new FormData($("#form1")[0]);
+    console.log("formData", { formData1 });
+    var formDataObject1 = {};
     // Iterate over form data entries
-    for (const [key, value] of formData.entries()) {
-      if (formDataObject[key]) {
-        if (Array.isArray(formDataObject[key])) {
-          formDataObject[key].push(value);
+    for (const [key, value] of formData1.entries()) {
+      if (formDataObject1[key]) {
+        if (Array.isArray(formDataObject1[key])) {
+          formDataObject1[key].push(value);
         } else {
-          formDataObject[key] = [formDataObject[key], value];
+          formDataObject1[key] = [formDataObject1[key], value];
         }
       } else {
-        formDataObject[key] = value;
+        formDataObject1[key] = value;
       }
     }
 
-    // Make an AJAX GET request to the API using jQuery
+    // Make an AJAX POST request to the API using jQuery
     $.ajax({
       url: "http://localhost:3000/api/v1/universities/register",
       method: "POST",
       contentType: "application/x-www-form-urlencoded", // or 'multipart/form-data' if needed
       dataType: "json", // Specify the expected data type (JSON in this case)
-      data: formDataObject,
+      data: formDataObject1,
       success: function (response) {
         set_id_to_localstorage(storageKey, response.data._id);
         alert("Successfully Saved");
       },
       error: function (xhr, textStatus, errorThrown) {
         console.error("Request failed with status:", textStatus);
+        console.error("Error details:", xhr.responseText);
       },
     });
   });
 };
+
+//form 2 ajax
+$("#form2").submit(function (e) {
+  e.preventDefault();
+  const formData2 = new FormData($("#form2")[0]);
+  console.log("formData2", formData2);
+  const formDataObject2 = {};
+
+  for (const [key, value] of formData2.entries()) {
+    if (formDataObject2[key]) {
+      if (Array.isArray(formDataObject2[key])) {
+        formDataObject2[key].push(value);
+      } else {
+        formDataObject2[key] = [formDataObject2[key], value];
+      }
+    } else {
+      formDataObject2[key] = value;
+    }
+  }
+  // Make an AJAX POST request to the API using jQuery
+  $.ajax({
+    url: "http://localhost:3000/api/v1/universities/register",
+    method: "POST",
+    contentType: "application/x-www-form-urlencoded", // or 'multipart/form-data' if needed
+    dataType: "json", // Specify the expected data type (JSON in this case)
+    data: formDataObject2,
+    success: function (response) {
+      set_id_to_localstorage(storageKey, response.data._id);
+      alert("Successfully Saved");
+    },
+    error: function (xhr, textStatus, errorThrown) {
+      console.error("Request failed with status:", textStatus);
+      console.error("Error details:", xhr.responseText);
+    },
+  });
+});
 
 const hybridForm = () => {
   $('input[name="install"]').change(function () {
@@ -274,15 +296,11 @@ const removeUserForm = () => {
 };
 
 $(document).ready(function () {
-  // bucketAutoFormLoad();
-  // nextFormFn();
+  nextFormFn();
   ajaxFormFn();
   addMoreBucket();
   removeBucket();
   hybridForm();
   addUserForm();
   removeUserForm();
-  // if (typeof jQuery === "undefined") {
-  //   console.error("jQuery is not loaded.");
-  // }
 });

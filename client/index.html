@@ -21,23 +21,16 @@
         </div>
     </div>
     <div class="notification"> </div>
-    <div id="boarding-form-2" class="reeled-board reeledFormBlock account-set-up">
+    <div id="boarding-form-1" class="reeled-board active reeledFormBlock account-set-up">
         <div class="container">
             <div class="reeledForm">
-                <form id="myForm" action="http://localhost:3000/api/v1/universities/register" method="POST"
+                <form id="form1" action="http://localhost:3000/api/v1/universities/register" method="POST"
                     accept-charset="utf-8">
                     <h2>New Reeled Account Set Up</h2>
                     <div class="topBlock">
                         <div class="formField">
                             <input type="text" name="uni_name" placeholder="University Name" autocomplete="off" />
                         </div>
-                        <!-- <div class="formField">
-                            <div class="customUploadBtn">
-                                <input type="file" id="actual-btn" hidden="" />
-                                <label for="actual-btn"><img src="images/upload.png" alt="" /></label>
-                                <span id="file-chosen">EPS Logo</span>
-                            </div>
-                        </div> -->
                         <div class="formField">
                             <input type="text" name="contact_name" placeholder="Contact Name" autocomplete="off" />
                         </div>
@@ -63,28 +56,10 @@
                             <input type="email" name="technical_contact_email" placeholder="Technical Contact Email"
                                 autocomplete="off" />
                         </div>
-                        <!-- <div class="topBlockSeperate">
-                        </div> -->
                     </div>
                     <div class="bottomBlock">
                         <div class="addUsers">
-                            <div id="bucket_list_wrapper">
-                                <div class="bucketList">
-                                    <h2>Bucket 1</h2>
-                                    <div class="formField">
-                                        <input type="text" name="bucket_name[]" placeholder="Bucket Name"
-                                            autocomplete="off" />
-                                    </div>
-                                    <div class="formField">
-                                        <input type="text" name="bucket_areas[]"
-                                            placeholder="Bucket Page or Website Areas" autocomplete="off" />
-                                    </div>
-                                    <div class="formField fullwidth">
-                                        <textarea name="bucket_brief[]" placeholder="Additional Buckets Brief:"
-                                            autocomplete="off"></textarea>
-                                    </div>
-                                </div>
-                            </div>
+                            <div id="bucket_list_wrapper"></div>
                             <button id="add_more_bucket" type="button">Add new bucket +</button>
                         </div>
                     </div>
@@ -96,10 +71,10 @@
         </div>
     </div>
 
-    <div id="boarding-form-1" class="reeled-board active reeledFormBlock user-details">
+    <div id="boarding-form-2" class="reeled-board reeledFormBlock user-details">
         <div class="container">
             <div class="reeledForm">
-                <form action="" method="get" accept-charset="utf-8">
+                <form id="form2" action="" method="POST" accept-charset="utf-8">
                     <h2>Server and User Details</h2>
                     <div class="optionBlock">
                         <div class="option">
@@ -125,7 +100,7 @@
                             <div class="frontCol">
                                 <span class="colTitle">Server Access</span>
                                 <div class="formField">
-                                    <select name="">
+                                    <select name="server_access">
                                         <option value="Server Access">Server Access</option>
                                         <option value="Server Access 1">Server Access 1</option>
                                         <option value="Server Access 2">Server Access 2</option>
@@ -134,44 +109,44 @@
                                     </select>
                                 </div>
                                 <div class="formField">
-                                    <input type="text" name="" value="" placeholder="Server Address" />
+                                    <input type="text" name="server_address" value="" placeholder="Server Address" />
                                     <div data-lastpass-icon-root="true"
                                         style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
                                     </div>
                                 </div>
                                 <div class="formField">
-                                    <input type="text" name="" value="" placeholder="Username" />
+                                    <input type="text" name="server_username" value="" placeholder="Username" />
                                     <div data-lastpass-icon-root="true"
                                         style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
                                     </div>
                                 </div>
                                 <div class="formField">
-                                    <input type="password" name="" value="" placeholder="Password" />
+                                    <input type="password" name="server_password" value="" placeholder="Password" />
                                     <div data-lastpass-icon-root="true"
                                         style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
                                     </div>
                                 </div>
-                                <div class="formField">
+                                <!-- <div class="formField">
                                     <div class="customUploadBtn">
                                         <input type="file" id="actual-btn" hidden="" />
                                         <label for="actual-btn"><img src="images/upload.png" alt="" /></label>
                                         <span id="file-chosen">Key Upload Field</span>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="backCol">
                                 <span class="colTitle">Website CMS Logins</span>
                                 <div class="formField">
-                                    <input type="text" name="" value="" placeholder="URL" />
+                                    <input type="text" name="cms_web_url" value="" placeholder="URL" />
                                 </div>
                                 <div class="formField">
-                                    <input type="text" name="" value="" placeholder="Username" />
+                                    <input type="text" name="cms_username" value="" placeholder="Username" />
                                     <div data-lastpass-icon-root="true"
                                         style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
                                     </div>
                                 </div>
                                 <div class="formField">
-                                    <input type="password" name="" value="" placeholder="Password" />
+                                    <input type="password" name="cms_password" value="" placeholder="Password" />
                                     <div data-lastpass-icon-root="true"
                                         style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
                                     </div>
@@ -186,16 +161,16 @@
                                 <h2>User 1</h2>
                                 <div class="usersList">
                                     <div class="formField">
-                                        <input type="text" name="" value="" placeholder="Full Name" />
+                                        <input type="text" name="fullName" value="" placeholder="Full Name" />
                                     </div>
                                     <div class="formField">
-                                        <input type="text" name="" value="" placeholder="Job Role" />
+                                        <input type="text" name="jobRole" value="" placeholder="Job Role" />
                                     </div>
                                     <div class="formField">
-                                        <input type="email" name="" value="" placeholder="Email" />
+                                        <input type="email" name="email" value="" placeholder="Email" />
                                     </div>
                                     <div class="formField">
-                                        <select name="">
+                                        <select name="userLevel">
                                             <option value="User Level">User Level</option>
                                             <option value="User Level 1">User Level 1</option>
                                             <option value="User Level 2">User Level 2</option>
@@ -568,7 +543,9 @@
     </div>
 </body>
 <!-- <script src="js/jquery-3.7.1.min.js"></script> -->
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 <script src="js/init.js"></script>
 
