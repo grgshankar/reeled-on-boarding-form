@@ -26,7 +26,7 @@ const bucketSchema = new Schema({
 //   userLevel: { type: String },
 // });
 const universitySchema = new Schema({
-  // _id: { type: String, default: uuidv4() },
+  _id: { type: String, default: uuidv4() },
   uni_name: { type: String, required: true },
   contact_name: { type: String, required: true },
   website_url: { type: String, required: true },
