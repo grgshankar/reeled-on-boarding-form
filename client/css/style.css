@@ -1,0 +1,455 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.2em;
+}
+p {
+  margin-top: 0;
+  line-height: 1.3em;
+}
+.container {
+  width: 80%;
+  margin: 30px auto;
+  max-width: 1280px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+h2 {
+  font-weight: 500;
+  line-height: 1.2em;
+  font-size: 32px;
+}
+.reeledFormBlock button {
+  display: inline-block;
+  background: #7106d5;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Manrope", sans-serif;
+  text-transform: uppercase;
+  border: 2px solid #7106d5;
+  padding: 6px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.reeledFormBlock button:hover {
+  background: transparent;
+  color: #7106d5;
+}
+.navWrap button.transparent {
+  background: transparent;
+  color: #7106d5;
+}
+
+.navWrap button.transparent:hover {
+  background: #7106d5;
+  color: #fff;
+}
+.navWrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  gap: 1em;
+}
+.navWrap button {
+  font-size: 20px;
+}
+.logoWrap {
+  background: #181829;
+}
+
+.logoWrap .container {
+  max-width: 1270px;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 35px 0 12px;
+  align-items: center;
+}
+
+.reeledFormBlock {
+  background: #eeeeee;
+  min-height: calc(100vh - 133px);
+  display: flex;
+  align-items: center;
+}
+
+.reeledForm {
+  max-width: 1030px;
+  background: #fff;
+  border-radius: 20px;
+  height: 100%;
+  min-height: 600px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 40px;
+}
+
+.reeledFormBlock form {
+  width: 100%;
+}
+
+.reeledFormBlock * {
+  box-sizing: border-box;
+}
+.reeledFormBlock h2 {
+  padding-bottom: 20px;
+  display: block;
+  width: 100%;
+}
+.customUploadBtn {
+  display: flex;
+  flex-flow: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.customUploadBtn label {
+  padding: 0 !important;
+  cursor: pointer;
+}
+.customUploadBtn span {
+  text-overflow: ellipsis;
+  width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.customUploadBtn img {
+  display: block;
+}
+input[type="text"],
+textarea,
+input[type="email"],
+input[type="file"],
+input[type="password"],
+select,
+.customUploadBtn {
+  font-size: 18px;
+  font-weight: 300;
+  color: #181829;
+  padding: 8px 12px;
+  width: 100%;
+  border-radius: 11px;
+  border: 1px solid #181829;
+  font-family: "Manrope", sans-serif;
+  outline: none;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder,
+input[type="email"]::placeholder,
+input[type="file"]::placeholder,
+input[type="password"]::placeholder {
+  color: #181829;
+}
+
+.topBlock {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+
+.formField {
+  width: 47%;
+  padding-bottom: 18px;
+}
+.topBlockSeperate {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.bottomBlock {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.formField.fullwidth {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+textarea {
+  height: 180px;
+}
+.divider {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+
+.divider > div {
+  width: 47%;
+}
+
+.divider .formField {
+  width: 100%;
+}
+
+span.colTitle {
+  display: block;
+  padding-bottom: 18px;
+}
+.addUsers {
+  width: 100%;
+}
+.bucketList,
+.usersList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-top: 10px;
+  position: relative;
+}
+.addUsers h2 + .bucketList,
+.addUsers h4 + .bucketList {
+  padding: 0;
+}
+.bucketList h4 {
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.optionBlock {
+  padding-bottom: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.6em 1em;
+  max-width: 310px;
+}
+
+.optionBlock .option {
+  position: relative;
+  padding-right: 32px;
+}
+select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  background: url("../images/arrow-select.png");
+  background-repeat: no-repeat;
+  background-size: 17px;
+  background-position: 97% 60%;
+}
+input[type="file"] {
+  cursor: pointer;
+  background: url("../images/upload.png");
+  background-repeat: no-repeat;
+  background-size: 26px;
+  background-position: 97% 52%;
+}
+input[type="radio"] {
+  position: absolute;
+  right: 2px;
+  opacity: 0;
+  margin: 0;
+  top: 0;
+  cursor: pointer;
+  height: 22px;
+  width: 22px;
+  z-index: 1;
+}
+
+.optionBlock .option label {
+  position: relative;
+}
+
+input[type="radio"] + label::after {
+  background: #7106d5;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+  right: -26px;
+  top: 6px;
+  opacity: 0;
+}
+
+input[type="radio"] + label::before,
+input[type="radio"] + label::after {
+  content: "";
+  position: absolute;
+}
+
+input[type="radio"] + label::before {
+  height: 20px;
+  width: 20px;
+  background: transparent;
+  border: 2px solid #7106d5;
+  border-radius: 100%;
+  right: -32px;
+  top: 0;
+}
+
+input[type="radio"]:checked + label::after {
+  opacity: 1;
+}
+.addUsers button {
+  margin-bottom: 20px;
+}
+.reeledFormBlock h4 {
+  font-weight: 500;
+  font-size: 20px;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.formField label {
+  padding-bottom: 8px;
+  display: block;
+}
+.upload-summary .topBlock {
+  padding-bottom: 20px;
+}
+.optionBlock h4 {
+  padding-bottom: 10px;
+}
+.upload-summary input[type="radio"] + label::before {
+  border-color: #181829;
+}
+.upload-summary input[type="radio"] + label::after {
+  background: #181829;
+}
+.option.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+.topBlock .divider {
+  padding-bottom: 0;
+}
+.reeledFormBlock p {
+  margin-bottom: 20px;
+}
+.seperateField {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+.buttonFullWidth {
+  width: 100%;
+}
+.seperateField.onlyLink .formField {
+  padding-bottom: 0;
+}
+
+.seperateField.divider {
+  width: 50%;
+}
+.approvalBlock > div {
+  padding-bottom: 40px;
+}
+
+.approvalBlock > div h4 + p {
+  margin-bottom: 7px;
+}
+.approvalBlock > div:last-child {
+  padding-bottom: 0;
+}
+.approvalBlock .formField textarea {
+  height: 85px;
+  padding-right: 75px;
+}
+.approvalBlock .formField {
+  position: relative;
+}
+.approvalBlock .formField.fullwidth {
+  padding: 0;
+}
+.addFields {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+.addFields img.code {
+  width: 24px;
+  object-fit: contain;
+}
+.addFields img.copy {
+  width: 17px;
+  object-fit: contain;
+}
+.addFields a {
+  margin-left: 5px;
+}
+.approvalBlock .logins .addFields {
+  bottom: 24px;
+}
+.approvalBlock .logins input[type="password"] {
+  padding-right: 70px;
+}
+.endButton {
+  text-align: right;
+}
+.seperateField.divider.btnWp {
+  padding: 20px 0 20px;
+}
+.seperateField.btnWp > div {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0 0.7em;
+}
+button.passed {
+  background: #2c8b28;
+  border-color: #2c8b28;
+}
+
+button.passed:hover {
+  color: #2c8b28;
+}
+
+button.failed {
+  background: #c42f2f;
+  border-color: #c42f2f;
+}
+
+button.failed:hover {
+  color: #c42f2f;
+}
+.reeled-board {
+  display: none;
+}
+.reeled-board.active {
+  display: block;
+}
+
+#btn_remove_more {
+  order: none;
+  width: 30px;
+  padding: 0px !important;
+  position: absolute;
+  right: 0;
+  top: 8px;
+  height: 30px;
+}
+#btn_remove_more:hover {
+  background: #7106d5;
+}
+#btn_remove_more img {
+  width: 100%;
+  padding: 6px;
+}
+#hybrid_form.topBlock {
+  display: none;
+}
+#hybrid_form.topBlock.active {
+  display: block;
+}

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="logoWrap">
+        <div class="container">
+            <div class="front">
+                <img src="images/reeled.png" alt="" />
+            </div>
+            <div class="back">
+                <img src="images/hybrid.png" alt="" />
+            </div>
+        </div>
+    </div>
+    <div class="notification"> </div>
+    <div id="boarding-form-2" class="reeled-board reeledFormBlock account-set-up">
+        <div class="container">
+            <div class="reeledForm">
+                <form id="myForm" action="http://localhost:3000/api/v1/universities/register" method="POST"
+                    accept-charset="utf-8">
+                    <h2>New Reeled Account Set Up</h2>
+                    <div class="topBlock">
+                        <div class="formField">
+                            <input type="text" name="uni_name" placeholder="University Name" autocomplete="off" />
+                        </div>
+                        <!-- <div class="formField">
+                            <div class="customUploadBtn">
+                                <input type="file" id="actual-btn" hidden="" />
+                                <label for="actual-btn"><img src="images/upload.png" alt="" /></label>
+                                <span id="file-chosen">EPS Logo</span>
+                            </div>
+                        </div> -->
+                        <div class="formField">
+                            <input type="text" name="contact_name" placeholder="Contact Name" autocomplete="off" />
+                        </div>
+                        <div class="formField">
+                            <input type="text" name="website_url" placeholder="Website URL" autocomplete="off" />
+                        </div>
+                        <div class="formField">
+                            <input type="email" name="email" placeholder="Email" autocomplete="off" />
+                            <div data-lastpass-icon-root="true"
+                                style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                            </div>
+                        </div>
+                        <div class="formField">
+                            <input type="text" name="staging_url" placeholder="Staging URL" autocomplete="off" />
+                        </div>
+
+                        <div class="formField">
+                            <input type="text" name="technical_contact_name" placeholder="Technical Contact Name"
+                                autocomplete="off" />
+                        </div>
+
+                        <div class="formField">
+                            <input type="email" name="technical_contact_email" placeholder="Technical Contact Email"
+                                autocomplete="off" />
+                        </div>
+                        <!-- <div class="topBlockSeperate">
+                        </div> -->
+                    </div>
+                    <div class="bottomBlock">
+                        <div class="addUsers">
+                            <div id="bucket_list_wrapper">
+                                <div class="bucketList">
+                                    <h2>Bucket 1</h2>
+                                    <div class="formField">
+                                        <input type="text" name="bucket_name[]" placeholder="Bucket Name"
+                                            autocomplete="off" />
+                                    </div>
+                                    <div class="formField">
+                                        <input type="text" name="bucket_areas[]"
+                                            placeholder="Bucket Page or Website Areas" autocomplete="off" />
+                                    </div>
+                                    <div class="formField fullwidth">
+                                        <textarea name="bucket_brief[]" placeholder="Additional Buckets Brief:"
+                                            autocomplete="off"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="add_more_bucket" type="button">Add new bucket +</button>
+                        </div>
+                    </div>
+                    <div class="navWrap">
+                        <button type="submit" class="boarding-next" data-id="boarding-form-2">Next</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="boarding-form-1" class="reeled-board active reeledFormBlock user-details">
+        <div class="container">
+            <div class="reeledForm">
+                <form action="" method="get" accept-charset="utf-8">
+                    <h2>Server and User Details</h2>
+                    <div class="optionBlock">
+                        <div class="option">
+                            <input type="radio" id="" name="server" value="Staging Server" />
+                            <label>Staging Server</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="" name="server" value="Live Server" />
+                            <label>Live Server</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="" name="install" value="Self Install" />
+                            <label>Self Install</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="hybrid_id" name="install" value="Hybrid Install"
+                                data-id="hybrid_form" />
+                            <label>Hybrid Install</label>
+                        </div>
+                    </div>
+                    <div id="hybrid_form" class="topBlock">
+                        <div class="divider">
+                            <div class="frontCol">
+                                <span class="colTitle">Server Access</span>
+                                <div class="formField">
+                                    <select name="">
+                                        <option value="Server Access">Server Access</option>
+                                        <option value="Server Access 1">Server Access 1</option>
+                                        <option value="Server Access 2">Server Access 2</option>
+                                        <option value="Server Access 3">Server Access 3</option>
+                                        <option value="Server Access 4">Server Access 4</option>
+                                    </select>
+                                </div>
+                                <div class="formField">
+                                    <input type="text" name="" value="" placeholder="Server Address" />
+                                    <div data-lastpass-icon-root="true"
+                                        style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                                    </div>
+                                </div>
+                                <div class="formField">
+                                    <input type="text" name="" value="" placeholder="Username" />
+                                    <div data-lastpass-icon-root="true"
+                                        style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                                    </div>
+                                </div>
+                                <div class="formField">
+                                    <input type="password" name="" value="" placeholder="Password" />
+                                    <div data-lastpass-icon-root="true"
+                                        style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                                    </div>
+                                </div>
+                                <div class="formField">
+                                    <div class="customUploadBtn">
+                                        <input type="file" id="actual-btn" hidden="" />
+                                        <label for="actual-btn"><img src="images/upload.png" alt="" /></label>
+                                        <span id="file-chosen">Key Upload Field</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backCol">
+                                <span class="colTitle">Website CMS Logins</span>
+                                <div class="formField">
+                                    <input type="text" name="" value="" placeholder="URL" />
+                                </div>
+                                <div class="formField">
+                                    <input type="text" name="" value="" placeholder="Username" />
+                                    <div data-lastpass-icon-root="true"
+                                        style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                                    </div>
+                                </div>
+                                <div class="formField">
+                                    <input type="password" name="" value="" placeholder="Password" />
+                                    <div data-lastpass-icon-root="true"
+                                        style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottomBlock">
+                        <div class="addUsers">
+                            <h2>Additional Users</h2>
+                            <div id="user_list_wrapper">
+                                <h2>User 1</h2>
+                                <div class="usersList">
+                                    <div class="formField">
+                                        <input type="text" name="" value="" placeholder="Full Name" />
+                                    </div>
+                                    <div class="formField">
+                                        <input type="text" name="" value="" placeholder="Job Role" />
+                                    </div>
+                                    <div class="formField">
+                                        <input type="email" name="" value="" placeholder="Email" />
+                                    </div>
+                                    <div class="formField">
+                                        <select name="">
+                                            <option value="User Level">User Level</option>
+                                            <option value="User Level 1">User Level 1</option>
+                                            <option value="User Level 2">User Level 2</option>
+                                            <option value="User Level 3">User Level 3</option>
+                                            <option value="User Level 4">User Level 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" id="add_more_user">Add new user +</button>
+                        </div>
+                    </div>
+                    <div class="navWrap">
+                        <button type="button" class="boarding-next" data-id="boarding-form-3">Next</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="boarding-form-3" class="reeled-board reeledFormBlock upload-summary">
+        <div class="container">
+            <div class="reeledForm">
+                <form action="" method="get" accept-charset="utf-8">
+                    <h2>Summary of Uploaded</h2>
+                    <h4>New Reeled Account Set up</h4>
+                    <div class="topBlock">
+                        <div class="formField">
+                            <label>University Name</label>
+                            <input type="text" name="" value="" placeholder="University Name" />
+                        </div>
+                        <div class="formField">
+                            <label>EPS Logo</label>
+                            <div class="customUploadBtn">
+                                <input type="file" id="actual-btn" hidden="" />
+                                <label for="actual-btn"><img src="images/upload.png" alt="" /></label>
+                                <span id="file-chosen">EPS Logo</span>
+                            </div>
+                        </div>
+                        <div class="formField">
+                            <label>Contact Name</label>
+                            <input type="text" name="" value="" placeholder="Contact Name" />
+                        </div>
+                        <div class="formField">
+                            <label>Website URL</label>
+                            <input type="text" name="" value="" placeholder="Website URL" />
+                        </div>
+                        <div class="formField">
+                            <label>Email</label>
+                            <input type="email" name="" value="" placeholder="Email" />
+                            <div data-lastpass-icon-root="true"
+                                style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottomBlock">
+                        <h4>Bucket 1</h4>
+                        <div class="formField">
+                            <label>Bucket Name</label>
+                            <input type="text" name="" value="" placeholder="Bucket Name" />
+                        </div>
+                        <div class="formField">
+                            <label>Bucket Page or Website Areas Areas</label>
+                            <input type="email" name="" value="" placeholder="Bucket Page or Website Areas" />
+                        </div>
+                        <div class="formField fullwidth">
+                            <label>Additioanl Buckets Brief:</label>
+                            <textarea name="" placeholder="Additioanl Buckets Brief:"></textarea>
+                        </div>
+                    </div>
+                    <div class="optionBlock">
+                        <h4>Server and User Details</h4>
+                        <div class="option">
+                            <input type="radio" id="" name="" value="" />
+                            <label>Staging Server</label>
+                        </div>
+                        <div class="option disabled">
+                            <input type="radio" id="" name="" value="" />
+                            <label>Live Server</label>
+                        </div>
+                        <div class="option disabled">
+                            <input type="radio" id="" name="" value="" />
+                            <label>Self Install</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="" name="" value="" />
+                            <label>Hybrid Install</label>
+                        </div>
+                    </div>
+                    <div class="divider">
+                        <div class="frontCol">
+                            <h4>Server Access</h4>
+                            <div class="formField">
+                                <label>Server Access</label>
+                                <input type="text" name="" value="" placeholder="Server Access" />
+                            </div>
+                            <div class="formField">
+                                <label>Server Address</label>
+                                <input type="text" name="" value="" placeholder="Server Address" />
+                            </div>
+                            <div class="formField">
+                                <label>Username</label>
+                                <input type="text" name="" value="" placeholder="Username" />
+                                <div data-lastpass-icon-root="true"
+                                    style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                                </div>
+                            </div>
+                            <div class="formField">
+                                <label>Password</label>
+                                <input type="password" name="" value="" placeholder="Password" />
+                                <div data-lastpass-icon-root="true"
+                                    style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                                </div>
+                            </div>
+                            <div class="formField">
+                                <label>Key Upload Field</label>
+                                <input type="text" name="" value="" placeholder="Key Upload Field" />
+                            </div>
+                        </div>
+                        <div class="backCol">
+                            <h4>Website CMS Logins</h4>
+                            <div class="formField">
+                                <label>URL</label>
+                                <input type="text" name="" value="" placeholder="URL" />
+                            </div>
+                            <div class="formField">
+                                <label>Username</label>
+                                <input type="text" name="" value="" placeholder="Username" />
+                                <div data-lastpass-icon-root="true"
+                                    style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                                </div>
+                            </div>
+                            <div class="formField">
+                                <label>Password</label>
+                                <input type="password" name="" value="" placeholder="Password" />
+                                <div data-lastpass-icon-root="true"
+                                    style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottomBlock">
+                        <div class="addUsers">
+                            <h4>Additional Users</h4>
+                            <div class="UsersList">
+                                <h4>User 1</h4>
+                                <div class="formField">
+                                    <label>Full Name</label>
+                                    <input type="text" name="" value="" placeholder="Full Name" />
+                                </div>
+                                <div class="formField">
+                                    <label>Job Role</label>
+                                    <input type="text" name="" value="" placeholder="Job Role" />
+                                </div>
+                                <div class="formField">
+                                    <label>Email</label>
+                                    <input type="email" name="" value="" placeholder="Email" />
+                                    <div data-lastpass-icon-root="true"
+                                        style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                                    </div>
+                                </div>
+                                <div class="formField">
+                                    <label>User Level</label>
+                                    <input type="text" name="" value="" placeholder="Editor" />
+                                </div>
+                            </div>
+                            <div class="UsersList">
+                                <h4>User 2</h4>
+                                <div class="formField">
+                                    <label>Full Name</label>
+                                    <input type="text" name="" value="" placeholder="Full Name" />
+                                </div>
+                                <div class="formField">
+                                    <label>Job Role</label>
+                                    <input type="text" name="" value="" placeholder="Job Role" />
+                                </div>
+                                <div class="formField">
+                                    <label>Email</label>
+                                    <input type="email" name="" value="" placeholder="Email" />
+                                </div>
+                                <div class="formField">
+                                    <label>User Level</label>
+                                    <input type="text" name="" value="" placeholder="Editor" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navWrap">
+                        <button type="button" class="transparent boarding-prev" data-id="boarding-form-2">Back</button>
+                        <button type="button" class="boarding-next" data-id="boarding-form-4">Next</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="boarding-form-4" class="reeled-board reeledFormBlock success-message">
+        <div class="container">
+            <div class="reeledForm">
+                <form action="" method="get" accept-charset="utf-8">
+                    <h2>New Reeled Account Set Up</h2>
+                    <p>
+                        Thanks for uploading the brief on Date we will respond with the mock-ups and test the website
+                        and server logins and for the platform within 7 working day’s.
+                    </p>
+                    <p>
+                        For self-install client’s links will be provided for the client to install, we will then test
+                        the installation when the client’s tech team notes that they have been completed.
+                    </p>
+                    <p>
+                        For Hybrid installs server logins will be tested and install completed, if logins are not
+                        correct the install pack will be returned to you to provide the correct logins.
+                    </p>
+                    <div class="bottomBlock">
+                        <div class="formField">
+                            <label>Bucket Name</label>
+                            <input type="text" name="" value="" placeholder="Bucket Name" />
+                        </div>
+                        <div class="formField">
+                            <label>Bucket Page or Website Areas Areas</label>
+                            <input type="email" name="" value="" placeholder="Bucket Page or Website Areas" />
+                        </div>
+                        <div class="formField fullwidth">
+                            <label>Additional Buckets Brief:</label>
+                            <textarea name="" placeholder="Additional Buckets Brief:"></textarea>
+                        </div>
+                    </div>
+                    <div class="navWrap">
+                        <button type="button" class="primary">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="boarding-form-5" class="reeled-board reeledFormBlock completion-form">
+        <div class="container">
+            <div class="reeledForm">
+                <form action="" method="get" accept-charset="utf-8">
+                    <h2>Crisp Completion Form</h2>
+                    <div class="topBlock">
+                        <div class="seperateField">
+                            <div class="formField">
+                                <input type="text" name="" value="" placeholder="Username" />
+                                <div data-lastpass-icon-root="true"
+                                    style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                                </div>
+                            </div>
+                            <div class="formField">
+                                <input type="password" name="" value="" placeholder="Password" />
+                                <div data-lastpass-icon-root="true"
+                                    style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                                </div>
+                            </div>
+                            <div class="buttonFullWidth">
+                                <button type="button">ADD NEW USER +</button>
+                            </div>
+                        </div>
+                        <div class="seperateField">
+                            <div class="formField">
+                                <input type="text" name="" value="" placeholder="Install Code Name" />
+                            </div>
+                            <div class="formField">
+                                <input type="password" name="" value="" placeholder="Code" />
+                            </div>
+                            <div class="buttonFullWidth">
+                                <button type="button">ADD NEW INSTALL CODE +</button>
+                            </div>
+                        </div>
+                        <div class="seperateField onlyLink">
+                            <div class="formField">
+                                <div class="customUploadBtn">
+                                    <input type="file" id="actual-btn" hidden="" />
+                                    <label for="actual-btn"><img src="images/upload.png" alt="" /></label>
+                                    <span id="file-chosen">URL of xD File</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seperateField divider">
+                            <div class="firstCol">
+                                <h4>CMS Login Check</h4>
+                                <div class="optionBlock">
+                                    <div class="option">
+                                        <input type="radio" id="" name="" value="" />
+                                        <label>Working</label>
+                                    </div>
+                                    <div class="option">
+                                        <input type="radio" id="" name="" value="" />
+                                        <label>Failed</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="LastCol">
+                                <h4>Server Login Check</h4>
+                                <div class="optionBlock">
+                                    <div class="option">
+                                        <input type="radio" id="" name="" value="" />
+                                        <label>Working</label>
+                                    </div>
+                                    <div class="option">
+                                        <input type="radio" id="" name="" value="" />
+                                        <label>Failed</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navWrap">
+                        <button type="button">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="boarding-form-6" class="reeled-board reeledFormBlock approval-form">
+        <div class="container">
+            <div class="reeledForm">
+                <form action="" method="get" accept-charset="utf-8">
+                    <h2>Install is Ready for Approval:</h2>
+                    <div class="approvalBlock">
+                        <div class="mockup">
+                            <h4>Design Mockups:</h4>
+                            <button type="button">CLICK HERE TO VIEW THE MOCKUP</button>
+                        </div>
+                        <div class="codes">
+                            <h4>Install Codes:</h4>
+                            <p>Header Script</p>
+                            <div class="formField fullwidth">
+                                <textarea name=""
+                                    placeholder="<script src=“https://reeled.conline/js/reeled-embed.min.js”></script>"></textarea>
+                                <div class="addFields">
+                                    <a href="#"><img class="code" src="images/code.png" alt="" /></a>
+                                    <a href="#"><img class="copy" src="images/copy.png" alt="" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="logins">
+                            <h4>Logins:</h4>
+                            <p>matt@crisp.digital</p>
+                            <div class="formField">
+                                <input type="password" name="" value="" placeholder="Password" />
+                                <div class="addFields">
+                                    <a href="#"><img class="code" src="images/code.png" alt="" /></a>
+                                    <a href="#"><img class="copy" src="images/copy.png" alt="" /></a>
+                                </div>
+                                <div data-lastpass-icon-root="true"
+                                    style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="seperateField divider btnWp">
+                        <div class="firstCol">
+                            <span class="colTitle">CMS Login Check</span>
+                            <button type="button" class="passed">Passed</button>
+                        </div>
+                        <div class="LastCol">
+                            <span class="colTitle">Server Login Check</span>
+                            <button type="button" class="failed">Failed</button>
+                            <button type="button" class="edit">Edit</button>
+                        </div>
+                    </div>
+                    <div class="endButton">
+                        <button type="button">BOOK INSTALL</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- <script src="js/jquery-3.7.1.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="js/init.js"></script>
+
+</html>
