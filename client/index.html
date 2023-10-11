@@ -74,33 +74,34 @@
     <div id="boarding-form-2" class="reeled-board reeledFormBlock user-details">
         <div class="container">
             <div class="reeledForm">
-                <form id="form2" action="" method="POST" accept-charset="utf-8">
+                <form id="form2" action="#" method="PUT" accept-charset="utf-8">
                     <h2>Server and User Details</h2>
                     <div class="optionBlock">
                         <div class="option">
-                            <input type="radio" id="" name="server" value="Staging Server" />
+                            <input type="radio" id="" name="server" value="staging_server" autocomplete="off" checked />
                             <label>Staging Server</label>
                         </div>
                         <div class="option">
-                            <input type="radio" id="" name="server" value="Live Server" />
+                            <input type="radio" id="" name="server" value="live_server" autocomplete="off" />
                             <label>Live Server</label>
                         </div>
                         <div class="option">
-                            <input type="radio" id="" name="install" value="Self Install" />
-                            <label>Self Install</label>
+                            <input id="self_install" type="radio" class="server_install" name="install"
+                                value="self_install" checked />
+                            <label for="self_install">Self Install</label>
                         </div>
                         <div class="option">
-                            <input type="radio" id="hybrid_id" name="install" value="Hybrid Install"
-                                data-id="hybrid_form" />
-                            <label>Hybrid Install</label>
+                            <input id="hybrid_install" type="radio" class="server_install" name="install"
+                                value="hybrid_install" />
+                            <label for="hybrid_install">Hybrid Install</label>
                         </div>
                     </div>
-                    <div id="hybrid_form" class="topBlock">
+                    <div id="hybrid_form" class="topBlock form_two_block">
                         <div class="divider">
                             <div class="frontCol">
                                 <span class="colTitle">Server Access</span>
                                 <div class="formField">
-                                    <select name="server_access">
+                                    <select name="server_access" autocomplete="off">
                                         <option value="Server Access">Server Access</option>
                                         <option value="Server Access 1">Server Access 1</option>
                                         <option value="Server Access 2">Server Access 2</option>
@@ -157,34 +158,12 @@
                     <div class="bottomBlock">
                         <div class="addUsers">
                             <h2>Additional Users</h2>
-                            <div id="user_list_wrapper">
-                                <h2>User 1</h2>
-                                <div class="usersList">
-                                    <div class="formField">
-                                        <input type="text" name="fullName" value="" placeholder="Full Name" />
-                                    </div>
-                                    <div class="formField">
-                                        <input type="text" name="jobRole" value="" placeholder="Job Role" />
-                                    </div>
-                                    <div class="formField">
-                                        <input type="email" name="email" value="" placeholder="Email" />
-                                    </div>
-                                    <div class="formField">
-                                        <select name="userLevel">
-                                            <option value="User Level">User Level</option>
-                                            <option value="User Level 1">User Level 1</option>
-                                            <option value="User Level 2">User Level 2</option>
-                                            <option value="User Level 3">User Level 3</option>
-                                            <option value="User Level 4">User Level 4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                            <div id="user_list_wrapper"></div>
                             <button type="button" id="add_more_user">Add new user +</button>
                         </div>
                     </div>
                     <div class="navWrap">
-                        <button type="button" class="boarding-next" data-id="boarding-form-3">Next</button>
+                        <button type="submit" class="boarding-next" data-id="boarding-form-3">Next</button>
                     </div>
                 </form>
             </div>
@@ -197,171 +176,7 @@
                 <form action="" method="get" accept-charset="utf-8">
                     <h2>Summary of Uploaded</h2>
                     <h4>New Reeled Account Set up</h4>
-                    <div class="topBlock">
-                        <div class="formField">
-                            <label>University Name</label>
-                            <input type="text" name="" value="" placeholder="University Name" />
-                        </div>
-                        <div class="formField">
-                            <label>EPS Logo</label>
-                            <div class="customUploadBtn">
-                                <input type="file" id="actual-btn" hidden="" />
-                                <label for="actual-btn"><img src="images/upload.png" alt="" /></label>
-                                <span id="file-chosen">EPS Logo</span>
-                            </div>
-                        </div>
-                        <div class="formField">
-                            <label>Contact Name</label>
-                            <input type="text" name="" value="" placeholder="Contact Name" />
-                        </div>
-                        <div class="formField">
-                            <label>Website URL</label>
-                            <input type="text" name="" value="" placeholder="Website URL" />
-                        </div>
-                        <div class="formField">
-                            <label>Email</label>
-                            <input type="email" name="" value="" placeholder="Email" />
-                            <div data-lastpass-icon-root="true"
-                                style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottomBlock">
-                        <h4>Bucket 1</h4>
-                        <div class="formField">
-                            <label>Bucket Name</label>
-                            <input type="text" name="" value="" placeholder="Bucket Name" />
-                        </div>
-                        <div class="formField">
-                            <label>Bucket Page or Website Areas Areas</label>
-                            <input type="email" name="" value="" placeholder="Bucket Page or Website Areas" />
-                        </div>
-                        <div class="formField fullwidth">
-                            <label>Additioanl Buckets Brief:</label>
-                            <textarea name="" placeholder="Additioanl Buckets Brief:"></textarea>
-                        </div>
-                    </div>
-                    <div class="optionBlock">
-                        <h4>Server and User Details</h4>
-                        <div class="option">
-                            <input type="radio" id="" name="" value="" />
-                            <label>Staging Server</label>
-                        </div>
-                        <div class="option disabled">
-                            <input type="radio" id="" name="" value="" />
-                            <label>Live Server</label>
-                        </div>
-                        <div class="option disabled">
-                            <input type="radio" id="" name="" value="" />
-                            <label>Self Install</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" id="" name="" value="" />
-                            <label>Hybrid Install</label>
-                        </div>
-                    </div>
-                    <div class="divider">
-                        <div class="frontCol">
-                            <h4>Server Access</h4>
-                            <div class="formField">
-                                <label>Server Access</label>
-                                <input type="text" name="" value="" placeholder="Server Access" />
-                            </div>
-                            <div class="formField">
-                                <label>Server Address</label>
-                                <input type="text" name="" value="" placeholder="Server Address" />
-                            </div>
-                            <div class="formField">
-                                <label>Username</label>
-                                <input type="text" name="" value="" placeholder="Username" />
-                                <div data-lastpass-icon-root="true"
-                                    style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
-                                </div>
-                            </div>
-                            <div class="formField">
-                                <label>Password</label>
-                                <input type="password" name="" value="" placeholder="Password" />
-                                <div data-lastpass-icon-root="true"
-                                    style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
-                                </div>
-                            </div>
-                            <div class="formField">
-                                <label>Key Upload Field</label>
-                                <input type="text" name="" value="" placeholder="Key Upload Field" />
-                            </div>
-                        </div>
-                        <div class="backCol">
-                            <h4>Website CMS Logins</h4>
-                            <div class="formField">
-                                <label>URL</label>
-                                <input type="text" name="" value="" placeholder="URL" />
-                            </div>
-                            <div class="formField">
-                                <label>Username</label>
-                                <input type="text" name="" value="" placeholder="Username" />
-                                <div data-lastpass-icon-root="true"
-                                    style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
-                                </div>
-                            </div>
-                            <div class="formField">
-                                <label>Password</label>
-                                <input type="password" name="" value="" placeholder="Password" />
-                                <div data-lastpass-icon-root="true"
-                                    style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottomBlock">
-                        <div class="addUsers">
-                            <h4>Additional Users</h4>
-                            <div class="UsersList">
-                                <h4>User 1</h4>
-                                <div class="formField">
-                                    <label>Full Name</label>
-                                    <input type="text" name="" value="" placeholder="Full Name" />
-                                </div>
-                                <div class="formField">
-                                    <label>Job Role</label>
-                                    <input type="text" name="" value="" placeholder="Job Role" />
-                                </div>
-                                <div class="formField">
-                                    <label>Email</label>
-                                    <input type="email" name="" value="" placeholder="Email" />
-                                    <div data-lastpass-icon-root="true"
-                                        style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
-                                    </div>
-                                </div>
-                                <div class="formField">
-                                    <label>User Level</label>
-                                    <input type="text" name="" value="" placeholder="Editor" />
-                                </div>
-                            </div>
-                            <div class="UsersList">
-                                <h4>User 2</h4>
-                                <div class="formField">
-                                    <label>Full Name</label>
-                                    <input type="text" name="" value="" placeholder="Full Name" />
-                                </div>
-                                <div class="formField">
-                                    <label>Job Role</label>
-                                    <input type="text" name="" value="" placeholder="Job Role" />
-                                </div>
-                                <div class="formField">
-                                    <label>Email</label>
-                                    <input type="email" name="" value="" placeholder="Email" />
-                                </div>
-                                <div class="formField">
-                                    <label>User Level</label>
-                                    <input type="text" name="" value="" placeholder="Editor" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="navWrap">
-                        <button type="button" class="transparent boarding-prev" data-id="boarding-form-2">Back</button>
-                        <button type="button" class="boarding-next" data-id="boarding-form-4">Next</button>
-                    </div>
+                    <div id="summery_form"></div>
                 </form>
             </div>
         </div>
@@ -479,7 +294,7 @@
                         </div>
                     </div>
                     <div class="navWrap">
-                        <button type="button">Submit</button>
+                        <button type="submit">Submit</button>
                     </div>
                 </form>
             </div>
@@ -542,11 +357,17 @@
         </div>
     </div>
 </body>
-<!-- <script src="js/jquery-3.7.1.min.js"></script> -->
+<script src="js/jquery-3.7.1.min.js"></script>
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 
 
-<script src="js/init.js"></script>
+
+<script src="js/global_storage.js"></script>
+<script src="js/form-one.js"></script>
+<script src="js/form-two.js"></script>
+<script src="js/form-two.js"></script>
+<script src="js/summery-form.js"></script>
+<!-- <script src="js/init.js"></script> -->
 
 </html>

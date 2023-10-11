@@ -6,6 +6,7 @@ body {
   font-weight: 300;
   font-size: 18px;
   line-height: 1.2em;
+  background: #eee;
 }
 p {
   margin-top: 0;
@@ -28,6 +29,22 @@ h2 {
   font-weight: 500;
   line-height: 1.2em;
   font-size: 32px;
+}
+
+.notification .container {
+  background: #ffe1a9;
+  padding: 22px 10px;
+  margin-top: 10px;
+}
+.notification p {
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  color: #181829;
+}
+.notification p a {
+  color: #ffa606;
+  font-weight: bold;
 }
 .reeledFormBlock button {
   display: inline-block;
@@ -87,14 +104,10 @@ h2 {
 }
 
 .reeledForm {
-  max-width: 1030px;
   background: #fff;
   border-radius: 20px;
   height: 100%;
   min-height: 600px;
-  /* display: flex;
-  flex-flow: row wrap;
-  justify-content: center; */
   padding: 40px;
 }
 
@@ -174,11 +187,11 @@ input[type="password"]::placeholder {
   justify-content: space-between;
 }
 
-.bottomBlock {
+/* .bottomBlock {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-}
+} */
 
 .formField.fullwidth {
   width: 100%;
@@ -431,7 +444,7 @@ button.failed:hover {
   display: block;
 }
 
-#btn_remove_more {
+.btn_remove_more {
   order: none;
   width: 30px;
   padding: 0px !important;
@@ -440,14 +453,14 @@ button.failed:hover {
   top: 8px;
   height: 30px;
 }
-#btn_remove_more:hover {
+.btn_remove_more:hover {
   background: #7106d5;
 }
-#btn_remove_more img {
+.btn_remove_more img {
   width: 100%;
   padding: 6px;
 }
-#hybrid_form.topBlock {
+#hybrid_form.form_two_block {
   display: none;
 }
 #hybrid_form.topBlock.active {
